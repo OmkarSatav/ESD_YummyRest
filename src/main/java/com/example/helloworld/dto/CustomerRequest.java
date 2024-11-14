@@ -7,10 +7,10 @@ public record CustomerRequest(
         @NotNull(message = "Customer should be present")
         @NotEmpty(message = "Customer should be present")
         @NotBlank(message = "Customer should be present")
-        @JsonProperty("firstName")
+        @JsonProperty("first_name")
         String firstName,
 
-        @JsonProperty("lastName")
+        @JsonProperty("last_name")
         String lastName,
 
         @NotNull(message="Customer email is required")
@@ -24,5 +24,5 @@ public record CustomerRequest(
         @Size(min = 6, max = 12)
         @JsonProperty("password")
         String password
-) {
+){
 }

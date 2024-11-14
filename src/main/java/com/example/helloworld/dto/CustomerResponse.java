@@ -4,9 +4,9 @@ package com.example.helloworld.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record CustomerResponse(
-        @JsonProperty("firstName")
+        @JsonProperty("first_name")
         String firstName,
-        @JsonProperty("lastName")
+        @JsonProperty("last_name")
         String lastName,
         @JsonProperty("email")
         String email
