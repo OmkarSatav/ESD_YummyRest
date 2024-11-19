@@ -14,13 +14,4 @@ public class ProductsMapper {
                 .price(request.price())
                 .build();
     }
-
-
-    public ProductsResponse toDto(Products product) {
-        ProductsResponse response = new ProductsResponse(
-                product.getId(), product.getProductName(), product.getPrice()
-        );
-        // Map other fields as needed
-        return response;
-    }
 }

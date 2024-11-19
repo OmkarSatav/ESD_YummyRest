@@ -23,11 +23,9 @@ public class LoginService {
 
     public String loginUser(LoginRequest request) {
         Customer customer = mapper.toEntity(request);
-        // Attempt to find the customer in the database
         Optional<Customer> existingCustomer = repo.findByEmail(customer.getEmail());
 
         if (existingCustomer.isPresent()) {
-            // Check if the password matches
             if(!encryptionService.validates(request.password(), existingCustomer.get().getPassword())) {
                 return "Wrong Password or Email";
             }
