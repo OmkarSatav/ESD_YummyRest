@@ -22,10 +22,8 @@ public class CustomerService {
     public Customer createCustomer(CustomerRequest request) {
         System.out.println("==================== create service");
 
-        // This will convert our dto to entity using Mapper
         Customer customer = mapper.toEntity(request);
         customer.setPassword(encryptionService.encode(customer.getPassword()));
-        // Stores entity into database using Repo
         repo.save(customer);
         return customer;
     }

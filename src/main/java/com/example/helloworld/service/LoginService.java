@@ -1,8 +1,6 @@
 package com.example.helloworld.service;
-import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
-import com.example.helloworld.dto.CustomerRequest;
 import com.example.helloworld.dto.LoginRequest;
 import com.example.helloworld.entity.Customer;
 import com.example.helloworld.mapper.LoginMapper;

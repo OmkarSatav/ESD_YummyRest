@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 public class CustomerMapper {
     public Customer toEntity(CustomerRequest request) {
         return Customer.builder()
-                .firstName(request.firstName())
-                .lastName(request.lastName())
+                .first_name(request.first_name())
+                .last_name(request.first_name())
 
                 .email(request.email())
                 .password(request.password())

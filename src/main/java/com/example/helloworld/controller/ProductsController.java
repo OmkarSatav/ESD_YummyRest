@@ -5,13 +5,12 @@ import com.example.helloworld.entity.Products;
 import com.example.helloworld.service.ProductsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/products")
-public class ProductsController {
 
+public class ProductsController {
     private ProductsService productsService;
 
     public ProductsController(ProductsService productService) {
@@ -22,7 +21,6 @@ public class ProductsController {
     public ResponseEntity<String> addProduct(@RequestBody ProductsRequest product) {
         return ResponseEntity.ok(productsService.addProduct(product));
     }
-
 
     // Read Product by ID
     @GetMapping("/{id}")
@@ -68,7 +66,7 @@ public class ProductsController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/products/{low}/{high}")
+    @GetMapping("{low}/{high}")
     public ResponseEntity<String> getProducts(@PathVariable String low, @PathVariable String high) {
         return ResponseEntity.ok(productsService.getProductsWithPriceRange(low,high));
     }

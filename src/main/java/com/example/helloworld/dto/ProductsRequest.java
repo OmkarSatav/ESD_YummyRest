@@ -8,7 +8,7 @@ public record ProductsRequest(
         @NotEmpty(message = "Customer should be present")
         @NotBlank(message = "Customer should be present")
         @JsonProperty("product_name")
-        String productName,
+        String product_name,
 
         @JsonProperty("price")
         Float price

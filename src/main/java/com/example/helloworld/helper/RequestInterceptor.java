@@ -20,7 +20,7 @@ public class RequestInterceptor implements HandlerInterceptor {
             return false;
         }
 
-        String token = authorizationHeader.substring(7); // Extract token from "Bearer {token}"
+        String token = authorizationHeader.substring(7);
         String username = jwtUtil.extractUsername(token);
 
         if (username == null || !jwtUtil.validateToken(token, username)) {

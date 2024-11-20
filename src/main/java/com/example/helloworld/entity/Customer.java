@@ -1,7 +1,7 @@
 package com.example.helloworld.entity;
 
 import jakarta.persistence.*;
-        import lombok.*;
+import lombok.*;
 
 @Data
 @Builder
@@ -15,10 +15,10 @@ public class Customer {
     private Long id;
 
     @Column(name = "first_name", nullable = false)
-    private String firstName;
+    private String first_name;
 
     @Column(name = "last_name")
-    private String lastName;
+    private String last_name;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;

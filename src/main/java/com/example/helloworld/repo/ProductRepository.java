@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Products, Long> {
 
-    Products findByProductName(String productName);
+    Products findProductsByProductName(String productName);
 
 
     @Query("SELECT p FROM Products p WHERE p.price BETWEEN :low AND :high ORDER BY p.price ASC")
-    List<Products> findTop2ByPriceBetweenOrderByPriceAsc(@Param("low") String low, @Param("high") String high);
+    List<Products> fetchTopProductByPrice(@Param("low") String low, @Param("high") String high);
 }
